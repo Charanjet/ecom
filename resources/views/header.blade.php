@@ -43,8 +43,11 @@
     </div>
     <div class="px-3 py-2 border-bottom mb-3">
       <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto w-50" action="/search">
+          <div class="input-group mb-3">
+            <input type="search" name="search" class="form-control main-search" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+            <button type="submit" class="input-group-text" id="basic-addon2">Search</button>
+          </div>
         </form>
 
         <div class="text-end">

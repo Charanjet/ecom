@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ Route::view('/login', 'login');
 Route::post('login',[Users::class,'login']);
 Route::get('/',[DashboardController::class,'index']);
 Route::get('/logout',[Users::class,'logout']);
-Route::get('detail/{id}',[DashboardController::class,'getDetail']);
+Route::get('detail/{id}',[ProductController::class,'getDetail']);
+Route::get('search',[ProductController::class,'search']);
