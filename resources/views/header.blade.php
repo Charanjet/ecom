@@ -48,7 +48,11 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2">Login</button>
+          @if(session()->get('user'))
+            <a href="logout" class="btn btn-light text-dark me-2">Logout</a>
+          @else
+            <a href="login" class="btn btn-light text-dark me-2">Login</a>
+          @endif
         </div>
       </div>
     </div>

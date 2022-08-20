@@ -15,10 +15,11 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('login');
+ });
 
-Route::view('/', 'login');
+Route::view('/login', 'login');
 Route::post('login',[Users::class,'login']);
 Route::get('/dashboard',[DashboardController::class,'index']);
+Route::get('/logout',[Users::class,'logout']);
