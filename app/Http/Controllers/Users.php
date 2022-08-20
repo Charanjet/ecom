@@ -10,12 +10,13 @@ class Users extends Controller
 {
     public function login(Request $request){
         $user = User::where('email',$request->input('email'))->first();
-
-        if (Hash::check($request->post('password'),$user->password)){
-            echo "you are logged in ";
+        if ($user && Hash::check($request->post('password'),$user->password)){
+            $request->session()->put('user',$user);
+            return redirect('dashboard');
         }else{
-            echo "Username or Password Do not match with our database";
+//            echo "in error message";
+            session()->flash('message', 'Post was created!');
+            return back()->with('error','Username or Password Do not match with our database');
         }
-        dd();
     }
 }

@@ -4,21 +4,18 @@
     <div class="row">
         <div class="col-sm-4 offset-sm-4 mt-5 mb-5">
             <h1 class="h1 text-center">Login</h1>
-            <form>
+            <form action="/login" method="POST">
+                @csrf
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <label for="email"  class="form-label">Email address</label>
+                  <input type="email" name="email" class="form-control" id="email">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="pass" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="pass">
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary text-center">Submit</button>
+                <div class="error btn-danger p-3 mt-3 mb-3">{{ Session::has('error')?Session::get('error'):'' }}</div>
+                <button type="submit" name="submit" class="btn btn-primary text-center">Submit</button>
               </form>
         </div>
     </div>

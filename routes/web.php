@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'login');
+Route::post('login',[Users::class,'login']);
+Route::get('/dashboard',[DashboardController::class,'index']);
