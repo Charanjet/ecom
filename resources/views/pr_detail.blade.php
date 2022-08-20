@@ -9,7 +9,11 @@
                 <h3>{{$product->name}}</h3>
                 <p>{{$product->price}}</p>
                 <p>{{$product->description}}</p>
-                <button class="btn btn-primary">Add to cart</button>
+                <form action="/add_to_cart" method="post">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                    <button type="submit" class="btn btn-primary">Add to cart</button>
+                </form>
             </div>
         </div>
     </div>

@@ -15,9 +15,8 @@ class Users extends Controller
             $request->session()->put('user',$user);
             return redirect('dashboard');
         }else{
-//            echo "in error message";
-            session()->flash('message', 'Post was created!');
-            return back()->with('error','Username or Password Do not match with our database');
+            session()->flash('message', 'Username or Password does not match with our database');
+            return redirect('/login')->with('error',session()->get('message'));
         }
     }
 

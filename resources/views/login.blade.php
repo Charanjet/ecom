@@ -14,7 +14,7 @@
                   <label for="pass" class="form-label">Password</label>
                   <input type="password" name="password" class="form-control" id="pass">
                 </div>
-                <div class="error btn-danger p-3 mt-3 mb-3">{{ Session::has('error')?Session::get('error'):'' }}</div>
+                <div class="error btn-danger p-3 mt-3 mb-3"></div>
                 <button type="submit" name="submit" class="btn btn-primary text-center">Submit</button>
               </form>
         </div>

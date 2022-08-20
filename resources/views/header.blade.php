@@ -1,3 +1,12 @@
+<?php
+use App\Http\Controllers\ProductController;
+$total=0;
+if(Session::has('user'))
+{
+    $total= ProductController::cartItem();
+}
+
+?>
 <header>
     <div class="px-3 py-2 bg-dark text-white">
       <div class="container">
@@ -32,9 +41,8 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-                Customers
+              <a href="/cart" class="nav-link text-white">
+                <i class="fa-solid fa-cart-shopping"></i>({{$total}})
               </a>
             </li>
           </ul>
@@ -52,9 +60,9 @@
 
         <div class="text-end">
           @if(session()->get('user'))
-            <a href="logout" class="btn btn-light text-dark me-2">Logout</a>
+            <a href="/logout" class="btn btn-light text-dark me-2">Logout</a>
           @else
-            <a href="login" class="btn btn-light text-dark me-2">Login</a>
+            <a href="/login" class="btn btn-light text-dark me-2">Login</a>
           @endif
         </div>
       </div>
