@@ -19,3 +19,4 @@ Route::view('/login', 'login');
 Route::post('login',[Users::class,'login']);
 Route::get('/',[DashboardController::class,'index']);
 Route::get('/logout',[Users::class,'logout']);
+Route::get('detail/{id}',[DashboardController::class,'getDetail']);

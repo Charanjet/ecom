@@ -6,11 +6,13 @@
                                         <div class="carousel-inner">
                                                 @foreach($products as $product)
                                                         <div class="carousel-item  {{$product->id==1?'active':''}}">
-                                                                <img src="{{$product->images}}" class="d-block w-100 slider-img" alt="{{$product->name}}" >
-                                                                <div class="carousel-caption">
-                                                                        <h3>{{$product->name}}</h3>
-                                                                        <p>{{$product->description}}</p>
-                                                                </div>
+                                                                <a href="detail/{{$product->id}}">
+                                                                        <img src="{{$product->images}}" class="d-block w-100 slider-img" alt="{{$product->name}}" >
+                                                                        <div class="carousel-caption">
+                                                                                <h3>{{$product->name}}</h3>
+                                                                                <p>{{$product->description}}</p>
+                                                                        </div>
+                                                                </a>
                                                         </div>
                                                 @endforeach
                                         </div>

@@ -13,4 +13,8 @@ class DashboardController extends Controller
         $products = Products::all();
         return view('welcome')->with('products',$products);
     }
+    public function getDetail($id){
+        $product = Products::find($id);
+        return view('pr_detail')->with('product',$product);
+    }
 }

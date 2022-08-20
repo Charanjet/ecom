@@ -18,8 +18,8 @@ class UserAuth
     public function handle(Request $request, Closure $next)
     {
 //        dd([$request->session()->has('user'),$request->path()]);
-        if (!$request->session()->has('user') && ($request->path()!="login" && $request->path()!="/"))
-            return redirect('/');
+//        if (!$request->session()->has('user') && ($request->path()!="login" && $request->path()!="/"))
+//            return redirect('/');
         return $next($request);
     }
 }
