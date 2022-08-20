@@ -7,7 +7,7 @@
     <title>Ecommerce</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/master.css')}}" type="text/css">
-    <script src="{{asset('js/bootstrap.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </head>
 <body>
     {{ View::make('header')}}
